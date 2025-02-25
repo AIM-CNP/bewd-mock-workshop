@@ -160,7 +160,7 @@ Niet alle methoden hebben een handige return value om het gedrag te valideren. S
   ````
 - Dit werkt niet. Een methode stubben die niks teruggeeft (geen return value, aka void) is wat lastiger en vereist een iets andere mockito syntax. Bovenstaande syntax had ook gewerkt als de methode toevallig een methode was met return value.
   ````java
-  doThrow(FoutiefStudentException.class).when(toets1).verwijderStudentResultaten(isNull());
+  doThrow(FoutiefStudentException.class).when(toets1).verwijderStudentResultaten(any());
   ````
 - Als je wilt dat je mock alleen een Exception gooit als er ook een null wordt meegegeven aan de gestubte methode dan kan je de *isNull()* matcher gebruiken in plaats van de *any()* matcher. Test of dat waar is.
 
